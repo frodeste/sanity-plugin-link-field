@@ -10,12 +10,22 @@ All notable changes to this project will be documented in this file. See
 ### Features
 
 * add Sanity Studio v6 support
+* add optional built-in link types: `document`, `media`, `sms`, `whatsapp`, and `fax` (hidden by default)
+* add `enabledBuiltInLinkTypes` plugin and field option to filter which built-in link types appear in the dropdown ([#19](https://github.com/winteragency/sanity-plugin-link-field/issues/19))
+* add field-level overrides for `linkableSchemaTypes`, `customLinkTypes`, `weakReferences`, and `referenceFilterOptions`
+* add optional `requireText` field option when link labels are enabled
+* improve link preview fallback when text labels are empty or disabled
 
 ### Bug Fixes
 
 * guard against undefined or incomplete object members during form state resolution in Studio v6
 * resolve link input fields by name instead of array position to stay compatible with fieldsets and decorations
 * harden custom link type option loading under React Strict Mode
+* guard href resolvers that return null before merging UrlObject results
+
+### BREAKING CHANGES
+
+* optional built-in link types are no longer shown unless explicitly listed in `enabledBuiltInLinkTypes`
 
 ## [1.5.1](https://github.com/winteragency/sanity-plugin-link-field/compare/v1.5.0...v1.5.1) (2026-03-03)
 
